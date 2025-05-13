@@ -2094,7 +2094,7 @@ MonoBehaviour:
   _projectilePool: {fileID: 1662782205}
   _projectilePrefab: {fileID: 5341742223406746680, guid: dabafd84faca2184c8efba20c7884f26, type: 3}
   _projectileSpeed: 60
-  _damage: 125
+  _damage: 200
   _splashRadius: 3
 --- !u!1 &633451211
 GameObject:
@@ -3530,8 +3530,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1082151371}
   serializedVersion: 2
-  m_LocalRotation: {x: -1, y: 0, z: 0, w: 0}
-  m_LocalPosition: {x: 6.97, y: 4.1, z: -0}
+  m_LocalRotation: {x: -1, y: -0, z: -0, w: 0}
+  m_LocalPosition: {x: 10.2, y: 4.1, z: -0.01}
   m_LocalScale: {x: 1, y: 1, z: 1.0993}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3627,8 +3627,8 @@ MonoBehaviour:
   m_Shape:
     rid: 8677496817384161580
   m_ShapeRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_UnmodifiedMeshVersion: 1131
-  m_Size: {x: -23.73477, y: 0, z: 3.966774}
+  m_UnmodifiedMeshVersion: 2051
+  m_Size: {x: -31.29, y: 0, z: 4.1}
   m_LocalCenter: {x: 0, y: 0, z: 0}
   references:
     version: 2
@@ -3732,39 +3732,39 @@ MonoBehaviour:
   - m_Vertices: 0f000000
   m_SharedTextures: []
   m_Positions:
-  - {x: -11.867385, y: 0, z: -1.983387}
-  - {x: -11.867385, y: 0, z: 0}
-  - {x: 0, y: 0, z: -1.983387}
+  - {x: -15.645, y: 0, z: -2.05}
+  - {x: -15.645, y: 0, z: 0}
+  - {x: 0, y: 0, z: -2.05}
   - {x: 0, y: 0, z: 0}
-  - {x: -11.867385, y: 0, z: 0}
-  - {x: -11.867385, y: 0, z: 1.983387}
+  - {x: -15.645, y: 0, z: 0}
+  - {x: -15.645, y: 0, z: 2.05}
   - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 1.983387}
-  - {x: 0, y: 0, z: -1.983387}
+  - {x: 0, y: 0, z: 2.05}
+  - {x: 0, y: 0, z: -2.05}
   - {x: 0, y: 0, z: 0}
-  - {x: 11.867385, y: 0, z: -1.983387}
-  - {x: 11.867385, y: 0, z: 0}
+  - {x: 15.645, y: 0, z: -2.05}
+  - {x: 15.645, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 1.983387}
-  - {x: 11.867385, y: 0, z: 0}
-  - {x: 11.867385, y: 0, z: 1.983387}
+  - {x: 0, y: 0, z: 2.05}
+  - {x: 15.645, y: 0, z: 0}
+  - {x: 15.645, y: 0, z: 2.05}
   m_Textures0:
-  - {x: -11.867385, y: -1.983387}
-  - {x: -11.867385, y: 0}
-  - {x: 0, y: -1.983387}
+  - {x: -15.645, y: -2.05}
+  - {x: -15.645, y: 0}
+  - {x: 0, y: -2.05}
   - {x: 0, y: 0}
-  - {x: -11.867385, y: 0}
-  - {x: -11.867385, y: 1.983387}
+  - {x: -15.645, y: 0}
+  - {x: -15.645, y: 2.05}
   - {x: 0, y: 0}
-  - {x: 0, y: 1.983387}
-  - {x: 0, y: -1.983387}
+  - {x: 0, y: 2.05}
+  - {x: 0, y: -2.05}
   - {x: 0, y: 0}
-  - {x: 11.867385, y: -1.983387}
-  - {x: 11.867385, y: 0}
+  - {x: 15.645, y: -2.05}
+  - {x: 15.645, y: 0}
   - {x: 0, y: 0}
-  - {x: 0, y: 1.983387}
-  - {x: 11.867385, y: 0}
-  - {x: 11.867385, y: 1.983387}
+  - {x: 0, y: 2.05}
+  - {x: 15.645, y: 0}
+  - {x: 15.645, y: 2.05}
   m_Textures2: []
   m_Textures3: []
   m_Tangents:
@@ -3793,7 +3793,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 1160520804}
-  m_VersionIndex: 1131
+  m_VersionIndex: 2051
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -9391,7 +9391,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7727610913706941767, guid: bfb8e95733da0eb45be740c0bfbae203, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.29
+      value: -5.29
       objectReference: {fileID: 0}
     - target: {fileID: 7727610913706941767, guid: bfb8e95733da0eb45be740c0bfbae203, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9399,7 +9399,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7727610913706941767, guid: bfb8e95733da0eb45be740c0bfbae203, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.51
+      value: 4.51
       objectReference: {fileID: 0}
     - target: {fileID: 7727610913706941767, guid: bfb8e95733da0eb45be740c0bfbae203, type: 3}
       propertyPath: m_LocalRotation.w
@@ -9454,10 +9454,10 @@ Mesh:
     topology: 0
     baseVertex: 0
     firstVertex: 0
-    vertexCount: 9
+    vertexCount: 16
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 11.867385, y: 0, z: 1.983387}
+      m_Extent: {x: 15.645, y: 0, z: 2.05}
   m_Shapes:
     vertices: []
     shapes: []
@@ -9474,10 +9474,10 @@ Mesh:
   m_KeepVertices: 1
   m_KeepIndices: 1
   m_IndexFormat: 0
-  m_IndexBuffer: 000001000200010003000200010004000300040005000300020003000600030007000600030005000700050008000700
+  m_IndexBuffer: 000001000200010003000200040005000600050007000600080009000a0009000b000a000c000d000e000d000f000e00
   m_VertexData:
     serializedVersion: 3
-    m_VertexCount: 9
+    m_VertexCount: 16
     m_Channels:
     - stream: 0
       offset: 0
@@ -9535,8 +9535,8 @@ Mesh:
       offset: 0
       format: 0
       dimension: 0
-    m_DataSize: 432
-    _typelessdata: cfe03dc100000000a0dffdbf000000000000803f000000000000803f0000000000000000000080bfcfe03dc1a0dffdbfcfe03dc10000000000000000000000000000803f000000000000803f0000000000000000000080bfcfe03dc1000000000000000000000000a0dffdbf000000000000803f000000000000803f0000000000000000000080bf00000000a0dffdbf000000000000000000000000000000000000803f000000000000803f0000000000000000000080bf0000000000000000cfe03dc100000000a0dffd3f000000000000803f000000000000803f0000000000000000000080bfcfe03dc1a0dffd3f0000000000000000a0dffd3f000000000000803f000000000000803f0000000000000000000080bf00000000a0dffd3fcfe03d4100000000a0dffdbf000000000000803f000000000000803f0000000000000000000080bfcfe03d41a0dffdbfcfe03d410000000000000000000000000000803f000000000000803f0000000000000000000080bfcfe03d4100000000cfe03d4100000000a0dffd3f000000000000803f000000000000803f0000000000000000000080bfcfe03d41a0dffd3f
+    m_DataSize: 768
+    _typelessdata: ec517ac100000000333303c0000000000000803f000000000000803f0000000000000000000080bfec517ac1333303c0ec517ac10000000000000000000000000000803f000000000000803f0000000000000000000080bfec517ac1000000000000000000000000333303c0000000000000803f000000000000803f0000000000000000000080bf00000000333303c0000000000000000000000000000000000000803f000000000000803f0000000000000000000080bf0000000000000000ec517ac10000000000000000000000000000803f000000000000803f0000000000000000000080bfec517ac100000000ec517ac10000000033330340000000000000803f000000000000803f0000000000000000000080bfec517ac133330340000000000000000000000000000000000000803f000000000000803f0000000000000000000080bf0000000000000000000000000000000033330340000000000000803f000000000000803f0000000000000000000080bf00000000333303400000000000000000333303c0000000000000803f000000000000803f0000000000000000000080bf00000000333303c0000000000000000000000000000000000000803f000000000000803f0000000000000000000080bf0000000000000000ec517a4100000000333303c0000000000000803f000000000000803f0000000000000000000080bfec517a41333303c0ec517a410000000000000000000000000000803f000000000000803f0000000000000000000080bfec517a4100000000000000000000000000000000000000000000803f000000000000803f0000000000000000000080bf0000000000000000000000000000000033330340000000000000803f000000000000803f0000000000000000000080bf0000000033330340ec517a410000000000000000000000000000803f000000000000803f0000000000000000000080bfec517a4100000000ec517a410000000033330340000000000000803f000000000000803f0000000000000000000080bfec517a4133330340
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -9591,7 +9591,7 @@ Mesh:
     m_UVInfo: 0
   m_LocalAABB:
     m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 11.867385, y: 0, z: 1.983387}
+    m_Extent: {x: 15.645, y: 0, z: 2.05}
   m_MeshUsageFlags: 0
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
@@ -9725,7 +9725,7 @@ MonoBehaviour:
   _projectilePool: {fileID: 1662782205}
   _projectilePrefab: {fileID: 3575611928538805115, guid: e487ac5b9aa3cd64db52db1fce2fb18d, type: 3}
   _projectileSpeed: 100
-  _damage: 25
+  _damage: 50
 --- !u!1 &1315812483
 GameObject:
   m_ObjectHideFlags: 0
@@ -13066,8 +13066,8 @@ GameObject:
   - component: {fileID: 1841060561}
   - component: {fileID: 1841060560}
   - component: {fileID: 1841060558}
-  - component: {fileID: 1841060559}
   - component: {fileID: 1841060564}
+  - component: {fileID: 1841060559}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -13118,7 +13118,7 @@ MonoBehaviour:
   _boxCollider: {fileID: 1841060560}
   _movementSpeed: 8
   _accelerationMultiplier: 2.5
-  _mouseSensitivity: 500
+  _mouseSensitivity: 250
   _jumpForce: 800
   _groundLayer:
     serializedVersion: 2
@@ -13210,14 +13210,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1841060557}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.6758574, z: -0, w: 0.7370325}
-  m_LocalPosition: {x: -31.598753, y: 0.5, z: 85.237465}
+  m_LocalRotation: {x: -0, y: 0.7071069, z: -0, w: -0.70710677}
+  m_LocalPosition: {x: 14.038911, y: 3.392, z: 85.060005}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 493214967}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 85.042, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
 --- !u!114 &1841060564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13250,7 +13250,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7920810554742520485, guid: 7cfea03d2eaf20f4f9788d2ef84d3903, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.359327
+      value: -5.3593273
       objectReference: {fileID: 0}
     - target: {fileID: 7920810554742520485, guid: 7cfea03d2eaf20f4f9788d2ef84d3903, type: 3}
       propertyPath: m_LocalPosition.y
@@ -13258,7 +13258,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7920810554742520485, guid: 7cfea03d2eaf20f4f9788d2ef84d3903, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.191185
+      value: 2.808815
       objectReference: {fileID: 0}
     - target: {fileID: 7920810554742520485, guid: 7cfea03d2eaf20f4f9788d2ef84d3903, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13869,35 +13869,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1721028488278909576, guid: b1233d30fbc37334fbd2bc5b40239c96, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.028816
+      value: -3.9711838
       objectReference: {fileID: 0}
     - target: {fileID: 1721028488278909576, guid: b1233d30fbc37334fbd2bc5b40239c96, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.99999994
       objectReference: {fileID: 0}
     - target: {fileID: 1721028488278909576, guid: b1233d30fbc37334fbd2bc5b40239c96, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: -0.00021796783
       objectReference: {fileID: 0}
     - target: {fileID: 1721028488278909576, guid: b1233d30fbc37334fbd2bc5b40239c96, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.00026736487
       objectReference: {fileID: 0}
     - target: {fileID: 1721028488278909576, guid: b1233d30fbc37334fbd2bc5b40239c96, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.000015330033
       objectReference: {fileID: 0}
     - target: {fileID: 1721028488278909576, guid: b1233d30fbc37334fbd2bc5b40239c96, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -0.025
       objectReference: {fileID: 0}
     - target: {fileID: 1721028488278909576, guid: b1233d30fbc37334fbd2bc5b40239c96, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 0.031
       objectReference: {fileID: 0}
     - target: {fileID: 1721028488278909576, guid: b1233d30fbc37334fbd2bc5b40239c96, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -0.002
       objectReference: {fileID: 0}
     - target: {fileID: 9204206244602145492, guid: b1233d30fbc37334fbd2bc5b40239c96, type: 3}
       propertyPath: m_Name
@@ -14108,18 +14108,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 327635629}
     m_Modifications:
-    - target: {fileID: -7703606161201994145, guid: 76374c76b313e5846a4dd1f25ec06c92, type: 3}
-      propertyPath: _hp100Color.b
-      value: 0.49803922
-      objectReference: {fileID: 0}
-    - target: {fileID: -7703606161201994145, guid: 76374c76b313e5846a4dd1f25ec06c92, type: 3}
-      propertyPath: _hp100Color.g
-      value: 0.76862746
-      objectReference: {fileID: 0}
-    - target: {fileID: -7703606161201994145, guid: 76374c76b313e5846a4dd1f25ec06c92, type: 3}
-      propertyPath: _hp100Color.r
-      value: 0.08627451
-      objectReference: {fileID: 0}
     - target: {fileID: 657802341006004397, guid: 76374c76b313e5846a4dd1f25ec06c92, type: 3}
       propertyPath: m_Name
       value: Enemy200hp
