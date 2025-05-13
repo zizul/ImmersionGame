@@ -1,6 +1,5 @@
 using UnityEngine;
 using System;
-using System.Collections;
 
 public class Health : MonoBehaviour, IDamageable
 {
@@ -10,23 +9,15 @@ public class Health : MonoBehaviour, IDamageable
     public event Action<int, int> OnHealthChanged; // (current, max)
     public event Action OnDeath;
     
-    private EnemyController _enemyController;
     
     private void Awake()
     {
         _currentHealth = _maxHealth;
-        _enemyController = GetComponent<EnemyController>();
-
-        if (_enemyController != null)
-        {
-            OnHealthChanged += _enemyController.UpdateColor;
-            OnDeath += _enemyController.ShakeAndDestroy;
-        }
     }
 
-    public void Update()
+    private void Start()
     {
-        _enemyController.UpdateColor(_currentHealth, _maxHealth);
+        OnHealthChanged?.Invoke(_currentHealth, _maxHealth);
     }
 
     public void TakeDamage(int damage)

@@ -1,24 +1,35 @@
 using System.Collections;
 using UnityEngine;
 
+[RequireComponent(typeof(MeshRenderer),typeof(Health))]
 public class EnemyController : MonoBehaviour
 {
+    [Header("Enemy Settings")]
     [SerializeField] private Color _hp100Color;
     [SerializeField] private Color _hp50Color;
     [SerializeField] private Color _hp0Color;
     [SerializeField] private float shakeDuration = 1f;
-    [SerializeField] private float shakeMagnitude = 0.1f;
+    
+    private float shakeMagnitude = 0.1f;
+    private Health _healthController;
     private MeshRenderer _meshRenderer;
 
     public void Awake()
     {
         _meshRenderer = GetComponent<MeshRenderer>();
+
+        _healthController = GetComponent<Health>();
+
+        if (_healthController != null)
+        {
+            _healthController.OnHealthChanged += UpdateColor;
+            _healthController.OnDeath += ShakeAndDestroy;
+        }
     }
 
     public void UpdateColor(int currentHealth, int maxHealth)
     {
         float healthPercentage = (float)currentHealth / maxHealth;
-
 
         Color newColor;
         if (healthPercentage == 1.0f)
@@ -49,8 +60,8 @@ public class EnemyController : MonoBehaviour
 
         while (elapsed < shakeDuration)
         {
-            float x = UnityEngine.Random.Range(-shakeMagnitude, shakeMagnitude);
-            float y = UnityEngine.Random.Range(-shakeMagnitude, shakeMagnitude);
+            float x = Random.Range(-shakeMagnitude, shakeMagnitude);
+            float y = Random.Range(-shakeMagnitude, shakeMagnitude);
             transform.position = new Vector3(originalPosition.x + x, originalPosition.y + y, originalPosition.z);
             elapsed += Time.deltaTime;
             yield return null;
