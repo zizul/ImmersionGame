@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Look Controls")]
     // Mouse rotation variables
-    private float _rotationY = 0f;
+    private float _rotationY = -90f;
     private float _currentMouseXDelta = 0f;
     private float _mouseDeltaXVelocity = 0f;
     private float _smoothTime = 0.03f;
