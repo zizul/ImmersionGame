@@ -7,9 +7,9 @@ public class PrimaryWeapon : Weapon
     [SerializeField] private float _projectileSpeed = 30f;
     [SerializeField] private int _damage = 25;
     
-    public override void Fire(WeaponTriggerType triggerType, float damageMultiplier)
+    public override void Fire(float damageMultiplier)
     {
-        base.Fire(triggerType, damageMultiplier);
+        base.Fire(damageMultiplier);
         
         Quaternion projectileRotation = _muzzlePoint.rotation * Quaternion.Euler(0f, 90f, 0f);
         

@@ -1,11 +1,5 @@
 using UnityEngine;
 
-public enum WeaponTriggerType
-{
-    Primary,
-    Secondary
-}
-
 public abstract class Weapon : MonoBehaviour
 {
     [Header("Weapon Settings")]
@@ -13,15 +7,11 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField] protected float _fireRate = 1f;
     
     protected float _nextFireTime;
-    
+
+    [Header("Dependencies")]
     [SerializeField] protected ProjectilePool _projectilePool;
     
-    public virtual void Fire(WeaponTriggerType triggerType)
-    {
-        Fire(triggerType, 1.0f);
-    }
-    
-    public virtual void Fire(WeaponTriggerType triggerType, float damageMultiplier)
+    public virtual void Fire(float damageMultiplier)
     {
         if (Time.time < _nextFireTime)
             return;

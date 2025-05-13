@@ -13,8 +13,6 @@ public class WeaponManager : MonoBehaviour
     
     private PrimaryWeapon _currentPrimaryWeapon;
     private SecondaryWeapon _currentSecondaryWeapon;
-    private int _currentPrimaryWeaponIndex = 0;
-    private int _currentSecondaryWeaponIndex = 0;
     private float _damageBoostMultiplier = 1f;
     private float _damageBoostEndTime = 0f;
     private GameObject _activeDamageBoostVFX;
@@ -60,7 +58,7 @@ public class WeaponManager : MonoBehaviour
             {
                 SwitchToWeapon(_currentPrimaryWeapon);
             }
-            FireActiveWeapon(WeaponTriggerType.Primary);
+            FireActiveWeapon();
         }
         else if (Input.GetMouseButtonDown(1)) // Right mouse button
         {
@@ -68,7 +66,7 @@ public class WeaponManager : MonoBehaviour
             {
                 SwitchToWeapon(_currentSecondaryWeapon);
             }
-            FireActiveWeapon(WeaponTriggerType.Primary);
+            FireActiveWeapon();
         }
         
         // Check if damage boost has expired
@@ -125,7 +123,6 @@ public class WeaponManager : MonoBehaviour
         
         // Equip new primary weapon
         _currentPrimaryWeapon = _primaryWeapons[index];
-        _currentPrimaryWeaponIndex = index;
         
         // If primary weapon is active, update it
         if (_activeWeapon == _currentPrimaryWeapon || _activeWeapon == null)
@@ -141,7 +138,6 @@ public class WeaponManager : MonoBehaviour
         
         // Equip new secondary weapon
         _currentSecondaryWeapon = _secondaryWeapons[index];
-        _currentSecondaryWeaponIndex = index;
         
         // If secondary weapon is active, update it
         if (_activeWeapon == _currentSecondaryWeapon)
@@ -150,11 +146,11 @@ public class WeaponManager : MonoBehaviour
         }
     }
     
-    private void FireActiveWeapon(WeaponTriggerType triggerType)
+    private void FireActiveWeapon()
     {
         if (_activeWeapon != null)
         {
-            _activeWeapon.Fire(triggerType, _damageBoostMultiplier);
+            _activeWeapon.Fire(_damageBoostMultiplier);
         }
     }
     
