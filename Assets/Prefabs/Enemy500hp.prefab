@@ -56,9 +56,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 345d456d056dcd9478f3ae63faab61d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hp100Color: {r: 0.19215687, g: 0.6666667, b: 0.45882353, a: 0}
+  _hp100Color: {r: 0.36078432, g: 0.8509804, b: 0.26666668, a: 0}
   _hp50Color: {r: 0.9882353, g: 0.83137256, b: 0.49019608, a: 0}
-  _hp0Color: {r: 0.69803923, g: 0.19607843, b: 0.3372549, a: 0}
+  _hp0Color: {r: 0.69803923, g: 0.19607843, b: 0.23671517, a: 0}
   shakeDuration: 1
   shakeMagnitude: 0.1
 --- !u!23 &750301548686719591

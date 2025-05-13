@@ -56,11 +56,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 345d456d056dcd9478f3ae63faab61d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hp100Color: {r: 0.08627451, g: 0.76862746, b: 0.49803922, a: 0}
+  _hp100Color: {r: 0.13370681, g: 0.5622641, b: 0.03713057, a: 0}
   _hp50Color: {r: 1, g: 0.8392157, b: 0.3529412, a: 0}
   _hp0Color: {r: 0.9764706, g: 0.21960784, b: 0.15294118, a: 0}
   shakeDuration: 1
-  shakeMagnitude: 0.1
 --- !u!23 &8062032305667892480
 MeshRenderer:
   m_ObjectHideFlags: 0
