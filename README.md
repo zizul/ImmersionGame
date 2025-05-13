@@ -1,4 +1,4 @@
-# ImmersionGame
+# [ImmersionGame](https://zizul.github.io/ImmersionGame/index.html)
 
 **Platform:** Unity 6000.0.28f1  
 
@@ -13,10 +13,32 @@
 - [License](#license)
 
 ## Overview
-This project is a 3D first-person game built using Unity and follows modern design patterns and programming practices to ensure scalability and maintainability. 
-It features key gameplay systems such as custom player controller, weapons, health management, moving platforms, power-ups, and visual feedback mechanisms.
+This Unity 3D first-person shooter project demonstrates essential game development mechanics, focusing on player movement, camera, environmental interaction, and combat systems in a simple 3D level. Key features include:
 
----
+### Level Design
+- Basic level built with simple objects (e.g., planes and cubes).
+- Includes corridors, stairs, moving platforms, and an abyss.
+
+### Player Mechanics
+- Smooth movement with WSAD keys (forward/backward/strafe).
+- Mouse-based rotation and jumping with the Space key.
+- Prevents falling off the level while allowing controlled jumps.
+
+### Power-Ups
+- Speed and jump boost (+50%) for a limited time.
+- Damage enhancement for the player's weapon.
+
+### Combat System
+- Two weapons:
+  - Fast-firing weapon (25 HP damage per shot).
+  - Splash-damage weapon (125 HP per shot).
+- Two types of stationary enemies:
+  - 200 HP and 500 HP.
+  - Enemies change color based on health: green > yellow > red.
+
+### UI Integration
+- Simple user interface displaying the player's state (e.g., moving, jumping).
+
 
 ## Architecture
 
