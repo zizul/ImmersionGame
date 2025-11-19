@@ -1,4 +1,4 @@
-# [Link to Immersion build](https://zizul.github.io/ImmersionGame/index.html)
+# [Link to Immersion build](https://zizul.github.io/ImmersionGame/index.html) (use Chrome)
 
 **Platform:** Unity 6000.0.28f1  
 
