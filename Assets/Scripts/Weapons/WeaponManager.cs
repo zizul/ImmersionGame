@@ -218,19 +218,17 @@ public class WeaponManager : MonoBehaviour
         if (_activeWeapon == null)
             return new WeaponInfo();
         
-        int baseDamage = 0;
+        int baseDamage = _activeWeapon.GetBaseDamage();
         string weaponType = "Unknown";
         
-        // Determine weapon type and base damage
+        // Determine weapon type
         if (_activeWeapon == _currentPrimaryWeapon)
         {
             weaponType = "Primary";
-            baseDamage = 25; // Default value if not obtainable
         }
         else if (_activeWeapon == _currentSecondaryWeapon)
         {
             weaponType = "Secondary";
-            baseDamage = 50; // Default value if not obtainable
         }
         
         return new WeaponInfo(

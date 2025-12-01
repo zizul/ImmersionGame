@@ -9,7 +9,8 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private Color _hp50Color;
     [SerializeField] private Color _hp0Color;
     [SerializeField] private float shakeDuration = 1f;
-    
+    [SerializeField] private ParticleSystem particleSystem;
+
     private float shakeMagnitude = 0.1f;
     private Health _healthController;
     private MeshRenderer _meshRenderer;
@@ -23,6 +24,7 @@ public class EnemyController : MonoBehaviour
         if (_healthController != null)
         {
             _healthController.OnHealthChanged += UpdateColor;
+            _healthController.OnHealthChanged += Bleed;
             _healthController.OnDeath += ShakeAndDestroy;
         }
     }
@@ -51,6 +53,15 @@ public class EnemyController : MonoBehaviour
     public void ShakeAndDestroy()
     {
         StartCoroutine(ShakeAndDestroyCoroutine());
+    }
+
+    public void Bleed(int currentHealth, int maxHealth)
+    {
+        if (particleSystem != null)
+        {
+            particleSystem.Stop();
+            particleSystem.Play();
+        }
     }
 
     private IEnumerator ShakeAndDestroyCoroutine()

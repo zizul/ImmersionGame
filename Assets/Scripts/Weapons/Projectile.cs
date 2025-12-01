@@ -1,37 +1,34 @@
-using System.Linq;
 using UnityEngine;
-using UnityEngine.ProBuilder;
 using System.Collections;
 
 public class Projectile : MonoBehaviour
 {
     private Rigidbody _rigidbody;
-    private int _damage;
-    private bool _hasSplashDamage;
-    private float _splashRadius;
     private ProjectilePool _pool;
     
     [SerializeField] private float _lifetime = 5f;
     [SerializeField] private GameObject _impactEffectPrefab;
-    [SerializeField] private float _projectileRotation;
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        
+        // Disable gravity for straight-line travel
+        if (_rigidbody != null)
+        {
+            _rigidbody.useGravity = false;
+        }
     }
 
-    public void Initialize(int damage, bool hasSplashDamage, float splashRadius, ProjectilePool pool)
+    public void Initialize(ProjectilePool pool)
     {
-        _damage = damage;
-        _hasSplashDamage = hasSplashDamage;
-        _splashRadius = splashRadius;
         _pool = pool;
 
         // Use a coroutine to return to pool after lifetime
         StartCoroutine(ReturnToPoolAfterLifetime());
     }
     
-    private System.Collections.IEnumerator ReturnToPoolAfterLifetime()
+    private IEnumerator ReturnToPoolAfterLifetime()
     {
         yield return new WaitForSeconds(_lifetime);
         if (gameObject.activeInHierarchy)
@@ -47,49 +44,15 @@ public class Projectile : MonoBehaviour
     
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            return;
-        }
-
+        // Visual effect only - no damage
         // Handle impact effect
         if (_impactEffectPrefab != null)
         {
             Instantiate(_impactEffectPrefab, transform.position, Quaternion.identity);
         }
         
-        // Apply damage
-        IDamageable target = collision.gameObject.GetComponent<IDamageable>();
-        if (target != null)
-        {
-            target.TakeDamage(_damage);
-        }
-        
-        // Apply splash damage if applicable
-        if (_hasSplashDamage) 
-        {
-            Collider[] colliders = Physics.OverlapSphere(transform.position, _splashRadius).Where(x => x.gameObject != collision.gameObject).ToArray();
-            ApplySplashDamage(colliders);
-        }
-        
+        // Return to pool on impact
         ReturnToPool();
-    }
-    
-    private void ApplySplashDamage(Collider[] colliders)
-    {
-        foreach (Collider collider in colliders)
-        {
-            IDamageable target = collider.GetComponent<IDamageable>();
-            if (target != null)
-            {
-                // Calculate distance to determine damage falloff
-                float distance = Vector3.Distance(transform.position, collider.transform.position);
-                float damagePercent = 1f - (distance / _splashRadius);
-                int finalDamage = Mathf.RoundToInt(_damage * damagePercent);
-
-                target.TakeDamage(finalDamage);
-            }
-        }
     }
 
     private void OnDisable()
@@ -111,4 +74,4 @@ public class Projectile : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
-} 
+}

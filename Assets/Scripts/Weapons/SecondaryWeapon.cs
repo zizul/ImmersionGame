@@ -1,28 +1,58 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class SecondaryWeapon : Weapon
 {
-    [Header("Secondary Weapon Settings")]
-    [SerializeField] private GameObject _projectilePrefab;
-    [SerializeField] private float _projectileSpeed = 15f;
-    [SerializeField] private int _damage = 125;
+    [Header("Secondary Weapon Splash Settings")]
     [SerializeField] private float _splashRadius = 3f;
     
-    public override void Fire(float damageMultiplier)
+    protected override void ApplyDamageToTargets(List<TargetInfo> targets, float damageMultiplier)
     {
-        base.Fire(damageMultiplier);
+        int calculatedDamage = Mathf.RoundToInt(_baseDamage * damageMultiplier);
+        HashSet<GameObject> damagedObjects = new HashSet<GameObject>();
         
-        Quaternion projectileRotation = _muzzlePoint.rotation * Quaternion.Euler(0f, 90f, 0f);
-        
-        // Use the pool instead of Instantiate
-        GameObject projectile = _projectilePool.GetProjectile(_projectilePrefab, _muzzlePoint.position, projectileRotation);
-        Projectile projectileComponent = projectile.GetComponent<Projectile>();
-        
-        if (projectileComponent != null)
+        // Apply direct damage to targets in crosshair
+        foreach (TargetInfo targetInfo in targets)
         {
-            int calculatedDamage = Mathf.RoundToInt(_damage * damageMultiplier);
-            projectileComponent.Initialize(calculatedDamage, true, _splashRadius, _projectilePool);
-            projectileComponent.Launch(_muzzlePoint.forward * _projectileSpeed);
+            if (targetInfo.Target != null)
+            {
+                targetInfo.Target.TakeDamage(calculatedDamage);
+                damagedObjects.Add(targetInfo.GameObject);
+                
+                // Apply splash damage around each hit target
+                ApplySplashDamage(targetInfo.HitPoint, calculatedDamage, damagedObjects);
+            }
         }
     }
-} 
+    
+    private void ApplySplashDamage(Vector3 explosionCenter, int baseDamage, HashSet<GameObject> alreadyDamaged)
+    {
+        Collider[] colliders = Physics.OverlapSphere(explosionCenter, _splashRadius);
+        
+        foreach (Collider collider in colliders)
+        {
+            // Skip if already damaged
+            if (alreadyDamaged.Contains(collider.gameObject))
+                continue;
+            
+            IDamageable target = collider.GetComponent<IDamageable>();
+            if (target != null)
+            {
+                // Check line of sight from explosion center
+                Vector3 directionToTarget = (collider.transform.position - explosionCenter).normalized;
+                float distance = Vector3.Distance(explosionCenter, collider.transform.position);
+                
+                // Simple raycast check for obstacles
+                if (!Physics.Raycast(explosionCenter, directionToTarget, distance, LayerMask.GetMask("Default")))
+                {
+                    // Calculate damage falloff based on distance
+                    float damagePercent = 1f - (distance / _splashRadius);
+                    int finalDamage = Mathf.RoundToInt(baseDamage * damagePercent * 0.5f); // 50% splash damage
+                    
+                    target.TakeDamage(finalDamage);
+                    alreadyDamaged.Add(collider.gameObject);
+                }
+            }
+        }
+    }
+}
